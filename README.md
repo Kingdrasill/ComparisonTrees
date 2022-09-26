@@ -1,2 +1,1 @@
-# ComparisonTrees
-Comparações das estruturas em árvores
+# Comparações das estruturas em árvores
