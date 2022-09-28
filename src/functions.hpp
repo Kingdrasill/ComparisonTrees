@@ -1,7 +1,9 @@
 #ifndef FUNCTIONS_HPP
 #define FUNCTIONS_HPP
 
-#include "tree.hpp"
+#include "avl.hpp"
+#include <algorithm>
+#include <vector>
 
 void createFile();
 void readFile();

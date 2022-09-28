@@ -12,12 +12,13 @@ typedef struct Record Record;
 typedef struct Tree Tree;
 
 struct Record{
-	float key;
+	double key;
 };
 
 struct Tree{
 	Record reg;
 	Tree *esq, *dir;
+	int weight;
 };
 
 Tree* CreateTree();
