@@ -1,7 +1,7 @@
 #ifndef FUNCTIONS_HPP
 #define FUNCTIONS_HPP
 
-#include "avl.hpp"
+#include "redblack.hpp"
 #include <algorithm>
 #include <vector>
 

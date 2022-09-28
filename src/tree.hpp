@@ -18,7 +18,9 @@ struct Record{
 struct Tree{
 	Record reg;
 	Tree *esq, *dir;
-	int weight;
+	int weight; // específico para AVL
+	Tree *pai; //específico para rubro negra
+	bool cor;  //específico para rubro negra (FALSE = VERMELHOR, TRUE = PRETO)
 };
 
 Tree* CreateTree();

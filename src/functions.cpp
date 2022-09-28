@@ -43,7 +43,7 @@ void readFile() {
             /* file >> d;
             list.push_back(d); */
             file >> r.key;
-            insertTree(&raiz, r);
+            insertTreeRB(&raiz, &raiz, &raiz, r);
         }
     } else {
         std::cout << "Nao foi posssivel abrir o arquivo " << nome << "!" << std::endl;
@@ -58,5 +58,5 @@ void readFile() {
 
     printf("\n%ld\n", list.size()); */
 
-    widthPath(raiz);
+    preordemRB(raiz);
 }
