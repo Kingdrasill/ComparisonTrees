@@ -10,7 +10,7 @@ bool TVazia(Tree **t){
 
 void insertTree(Tree **t, Record r){
     if(TVazia(t)){
-        *t = (Tree*)malloc(sizeof(Tree));
+        *t = new Tree;
         (*t)->esq = nullptr; 
         (*t)->dir = nullptr; 
         (*t)->reg = r; 
@@ -27,8 +27,8 @@ void insertTree(Tree **t, Record r){
 
 void pesquisa(Tree **t, Tree **aux, Record r){
     if(*t == nullptr){
-      printf("[ERROR]: Node not found!");
-      return;
+        *aux = *t;
+        return;
     }
 
     if((*t)->reg.key > r.key){ pesquisa(&(*t)->esq, aux, r); return;}
@@ -38,7 +38,7 @@ void pesquisa(Tree **t, Tree **aux, Record r){
 }
 
 
-int isInTree(Tree *t, Record r) {
+double isInTree(Tree *t, Record r) {
     if(t == nullptr){ 
       return 0;
     }
@@ -56,7 +56,7 @@ void antecessor(Tree **t, Tree *aux){
     aux->reg = (*t)->reg;
     aux = *t; 
     *t = (*t)->esq;
-    free(aux);
+    delete aux;
 } 
 
 
@@ -74,7 +74,7 @@ void removeTree(Tree **t, Record r){
   	if ((*t)->dir == nullptr){ 
   		aux = *t;  
   		*t = (*t)->esq;
-    	free(aux);
+    	delete aux;
         return;
   	}
 
@@ -82,7 +82,7 @@ void removeTree(Tree **t, Record r){
 
   	aux = *t;  
   	*t = (*t)->dir;
-  	free(aux);
+  	delete aux;
 }
 
 
@@ -117,7 +117,7 @@ void posordem(Tree *t)
 void widthPath(Tree *t){
     std::queue<Tree*> q;
     Tree  *no, *filho;
-    int qtd = 0;
+    int qtd = 0, p = 1, f = 0;
     no = t;
     q.push(no);
     
@@ -125,15 +125,60 @@ void widthPath(Tree *t){
         qtd += 1;
         no = q.front();
         q.pop();
-        printf("%f ", no->reg.key);
+        printf("%f\t", no->reg.key);
+        p--;
         if(no->esq != nullptr){
             filho = no->esq;
             q.push(filho);
+            f++;
         }
         if(no->dir != nullptr){
             filho= no->dir;
             q.push(filho);
+            f++;
+        }
+		if(p == 0) {
+			printf("\n");
+			p = f;
+			f = 0;
+		}
+    }
+}
+
+std::chrono::microseconds insercaoTree(int size, std::vector<double> numbers, Tree **t) {
+    Record r;
+    std::chrono::_V2::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
+    for(int i=0; i<size; i++) {
+        r.key = numbers[i];
+        insertTree(&(*t), r);
+    }
+    std::chrono::_V2::high_resolution_clock::time_point end = std::chrono::high_resolution_clock::now();
+    return std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+}
+
+std::chrono::microseconds searchTree(std::vector<double> numbers, Tree **t, std::vector<double> *remover) {
+    Record r;
+    std::chrono::_V2::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
+    for(int i=0; i<10000; i++) {
+        r.key = numbers[i];
+        Tree *aux;
+        pesquisa(t, &aux, r);
+        if(aux != nullptr) {
+            std::cout << std::setprecision(12) << aux->reg.key << std::endl;
+            remover->push_back(aux->reg.key);
         }
     }
-    printf("\n%d\n", qtd);
+    std::chrono::_V2::high_resolution_clock::time_point end = std::chrono::high_resolution_clock::now();
+    return std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+}
+
+std::chrono::microseconds remocaoTree(std::vector<double> numbers, Tree **t) {
+    Record r;
+    std::chrono::_V2::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
+    for(double x:numbers) {
+        r.key = x;
+        removeTree(t, r);
+    }
+    std::chrono::_V2::high_resolution_clock::time_point end = std::chrono::high_resolution_clock::now();
+    return std::chrono::duration_cast<std::chrono::microseconds>(end - start);
 }

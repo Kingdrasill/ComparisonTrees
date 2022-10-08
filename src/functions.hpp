@@ -1,11 +1,20 @@
 #ifndef FUNCTIONS_HPP
 #define FUNCTIONS_HPP
 
-#include "redblack.hpp"
-#include <algorithm>
-#include <vector>
+#include "others.hpp"
+#include <fstream>
+#include <cstring>
+#include <random>
 
-void createFile();
-void readFile();
+typedef struct Times Times;
+
+struct Times {
+    std::vector<std::chrono::microseconds> insertion;
+    std::vector<std::chrono::microseconds> search;
+    std::vector<std::chrono::microseconds> remove;
+};
+
+void createFiles();
+void readFiles();
 
 #endif

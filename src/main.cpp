@@ -1,7 +1,7 @@
 #include "functions.hpp"
 
 int main() {
-    //createFile();
-    readFile();
+    //createFiles();
+    readFiles();
     return 0;
 }
