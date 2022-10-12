@@ -21,7 +21,7 @@ Pode se encontrar mais informações sobre as estruturas utilizadas informadas a
 <p align="justify">
 No link da árvore redblack não se tem a explicação da remoção, pois ela não foi implementada. A remoção nas árvores redblack se inicia com uma etapa de busca e remoção como nas árvores binárias de busca convencionais. Então se alguma propriedade vermelho-preta for violada, a árvore deve ser rebalanceada. Caso a remoção efetiva seja de um nó vermelho, esta é realizada sem problemas, pois todas as propriedades da árvore se manterão intactas. Se o nó a ser removido for preto, a quantidade de nós pretos em pelo menos um dos caminhos da árvore foi alterado, o que implica que algumas operações de rotação e/ou alteração de cor sejam feitas para manter o balanceamento da árvore. As remoções podem ser dividas nos seguintes casos:
 
-<p align="center"><img src="imgs/tabela.png"></p>
+<p align="center"><img src="imgs/tablea.png"></p>
 
 <b>Caso 1:</b> O nó a ser removido é vermelho e possui apenas um único filho ou não possui filhos.<br>
 <b>Correção:</b> Remoção análoga ao de uma árvore binária comum.
