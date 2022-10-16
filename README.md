@@ -109,11 +109,31 @@ O programa foi rodado em um computador ACER com Intel(R) Core(TM) i7-7500U CPU @
 
 # 500
 
+<p align="center">
+  <img src="imgs/500.png">
+</p>
+
 # 5000
+
+<p align="center">
+  <img src="imgs/5000.png">
+</p>
 
 # 50000
 
+<p align="center">
+  <img src="imgs/50000.png">
+</p>
+
 # 500000
+
+<p align="center">
+  <img src="imgs/5000001.png">
+</p>
+
+<p align="center">
+  <img src="imgs/5000002.png">
+</p>
 
 # Compilação e Execução
 
