@@ -109,7 +109,7 @@ Ainda na opção 2 antes de qualquer coisa acontecer é se perguntado quantas ve
 # Resultados
 
 <p align="justify">
-Para se ter um bom tempo médio das estruturas foi pedido para o programa fazer as estruturas 100 vezes, os testes foram feitos em um notebook ACER com Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz-2.90 GHz com 12 GB de RAM no Visual Studio utilizando um WSL do Ubuntu. Os resultados médios para as quantidades de dados foram os seguintes:
+Para se ter um bom tempo médio, que estão em milisegundos, das estruturas foi pedido para o programa fazer as estruturas 100 vezes, os testes foram feitos em um notebook ACER com Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz-2.90 GHz com 12 GB de RAM no Visual Studio utilizando um WSL do Ubuntu. Os resultados médios para as quantidades de dados foram os seguintes:
 </p>
 
 ## 500 dados
