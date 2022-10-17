@@ -91,41 +91,46 @@ O problema do duplo preto ocorre quando retiramos um nó preto. Como a árvore s
 
 # Execução do programa
 
-<p align="justify">
-Como dito anteriormente quando o programa roda é apresentados as opções que podem ser escolhidas por meio de um menu, a imagem abaixo mostra o menu. As opções são 1 - Criar os arquivos que criar os arquivos "insercao.txt" e "pesquisa.txt", 2 - Criar as estruturas que faz o objetivo do programa e 3 - Sair para não fazer fazer nada no programa. Quando a opção 1 é escolhida o programa só vai gerar os arquivos e parar, para a geração do arquivo voi se utilizado a biblioteca <a href="https://cplusplus.com/reference/random/">random</a> pois ela me dá uma geração de números aleatórios mais uniforme do que usando a rand, está opção demora bastante para rodar por causa da geração do arquivo "pesquisa.txt" pois nele quando se é pego um número do arquivo "insercao.txt", que são guardados em um vetor, é pego o último e depois um shuffle é feito no vetor. Como 80% dos números são do arquivo de inserção o shuffle é chamado muitas vezes o que causa um gargalo na execução.
-  
 <p align="center"><img src="imgs/menu.png"></p>
+<p align="justify">  
+Na imagem acima está a primeira coisa que aparece quando o programa é executado. Neste menu a 3 opções: 1 - Criar arquivos, 2 - Criar estruturas e 3 - Sair, a opção 3 serve apenas para parar de executar o programa. O programa só faz a execução de uma das opções por vez, ou seja, se uma opção for escolhida o programa executará ela e vai ser parado.
+</p>
+<p align="justify">
+A opção 1 tem como finalidade a criação de dois arquivos sendo eles "insercao.txt" e "pesquisa.txt", no primeiro vai ser armazenados os dados a serem inseridos nas estruturas e no segundo os dados que seram buscados nas estruturas. O primeiro arquivo a ser gerado no final terá 500000 números entre 0 e 1000000, gerados usando a biblioteca <a href="https://cplusplus.com/reference/random/">random</a>, já o segundo arquivo terá 10000 números em que mais ou menos 80% seram números do primeiro arquivo e os outros 20% seram entre -1000000 e 0 para eles nunca serem achados nas estruturas, eles também foram gerados com a biblioteca <a href="https://cplusplus.com/reference/random/">random</a>.
+</p>
+<p align="justify">
+A opção 2 tem como finalidade gerar as estruturas com 500, 5000, 50000 e 500000 dados do arquivo "insercao.txt", busca dos dados em "pesquisa.txt" nas estruturas e rmeoção dos encontrados, guradando o tempo necessário para fazer cada operação, ou seja, para uma estrutura é se guardado o tempo necessário para inserir os dados, para buscar os dados e remover os encontrados. Para se ter uma comparação boa entre as estruturas a inserção, busca e remoção são feitas de formas semelhantes para todas as estruturas, mas apenas as de busca e remoção são mesmo diferentes pois na busca é se printado os dados encontrado na estrutura e este dado é guardado em um vetor para depois ser removido na remoção.
+</p>
 
-Já na opção 2 a primeira coisa que acontece é um pergunta, a imagem abaixo mostra ela, que serve para ver quantas vezes o progrma precisa chamar o método "readFiles". Quando o método é chamado todos os dados nos arquivos "insercao.txt" e "pesquisa.txt" são colocados em vectors insertion e search respectivamente, depois é se feito as estruturas com as seguintes quatidades de inserções: 500, 5000, 50000 e 500000, o tempo que cada estrutura demora para guarda estes dados é salvado. Depois da inserção em uma das estruturas é se feito a pesquisa dos 10000 dados em search, também se gurada o tempo para fazer isto, e os dados que forem encontrados são printados e colocados em um vector para serem removidos. Depos de fazer a pesquisa é se removido os dados encontrados que estão no vector remover, o tempo para fazer isto é guardado. Depois de fazer todas estas operações com todas as estruturas com as 500 inserções, os vectors insertion e search são embaralhados para fazer as inserções com 5000, e assim por adiante.
-
-Depois de rodar o método "readFiles" a quantidade de vezes informada o método "createTimeFile" é chamado para criar um arquivo "tempos.txt" com os resultados do tempo médio para fazer as opreção de inserção, busca e remoção nas estruturas com os tamnhos 500, 5000, 50000 e 500000 e os tempos individuas para cada teste.
+<p align="justify">
+Ainda na opção 2 antes de qualquer coisa acontecer é se perguntado quantas vezes as estruturas devem ser criadas, logo, se for informado que as estruturas devem ser criadas 2 vezes o programa vai criar as estruturas de 500, 5000, 50000 e 500000 2 vezes. Outra coisa que acontece é que no final do program o programa cria um arquivo "tempos.txt" que tem os resultados para o tempo médio de inserção, busca e remoção de todas as estruturas, além dos tempos de cada vez que as estruturas foram criadas.
 </p>
 
 # Resultados
 
 <p align="justify">
-O programa foi rodado em um computador ACER com Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz-2.90 GHz, no Visual Studio com WSL do Ubuntu. Para ter uma ideia bom tempo médio foi se informado na pergunta de quantas vezes que o programa deve roda que le deve rodar 100 vezes. Logo no arquivo "tempos.txt" está os resultados médio e de cada teste. Os resultados médio obtidos foram, eles estão divididos pelo quantidade de dados inseridos nas estruturas:
+Para se ter um bom tempo médio das estruturas foi pedido para o programa fazer as estruturas 100 vezes, os testes foram feitos em um notebook ACER com Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz-2.90 GHz com 12 GB de RAM no Visual Studio utilizando um WSL do Ubuntu. Os resultados médios para as quantidades de dados foram os seguintes:
 </p>
 
-# 500
+## 500 dados
 
 <p align="center">
   <img src="imgs/500.png">
 </p>
 
-# 5000
+## 5000 dados
 
 <p align="center">
   <img src="imgs/5000.png">
 </p>
 
-# 50000
+## 50000 dados
 
 <p align="center">
   <img src="imgs/50000.png">
 </p>
 
-# 500000
+## 500000 dados
 
 <p align="center">
   <img src="imgs/5000001.png">
@@ -133,6 +138,16 @@ O programa foi rodado em um computador ACER com Intel(R) Core(TM) i7-7500U CPU @
 
 <p align="center">
   <img src="imgs/5000002.png">
+</p>
+
+# Conclusão
+
+<p align="justify">
+Do jeito que foi os testes foram feitos no programa podemos tirar como conclusões que a estrutura que sempre tem o melhor tempo total de execução é o Unordered Map do C++, que se o objetivo é apenas guardar dados é melhor estrutura é o vetor pois na inserção ele apenas tem que criar um novo link no final dele e que para estruturas Map e Unordered Map não se tem uma diferença muita grande na busca e remoção dos dados com o aumento da quantidade de dados armazenados neles.
+</p>
+
+<p align="justify">
+Tem como melhor o tempo de remoção do vetor pois do jeito que foi feito na busca é feito uma busca binária para achar o dado e na remoção é se andado do ínicio ao fim para achar o dado, por fim de deizar os métodos de busca e remoção o mais igual possível para todas estruturas. A duas maneiras de melhor o programa que são na remoção também achar a posição do número por busca binária ou melhor ainda em vez de na busca retornar os números que devem ser removidos retornar a posição deles no vetor, assim não se tendo o problema que teve no teste de 50000 e 500000 onde o tempo da remoção do vetor é muito maior do que os das outras estruras. 
 </p>
 
 # Compilação e Execução
