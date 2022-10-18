@@ -150,6 +150,10 @@ Foi possível observar com os 100 testes que a estrutura mais rápida neste prog
 Também é possível se observar que o vetor é a estrutura mais lenta por causa do jeito que ela foi implementada para se ter uma comparação igual das estruturas, se não fosse preciso deixar os métodos de inserção, busca e remoção o mais parecido possível para comparar as estruturas o vetor não teria os tempos tão maiores que os das outras estruturas.
 </p>
 
+<p align="justify">
+Também é se observado que entre as estruturas de árvores a única que se manteve no mesmo lugar, que é em terceiro lugar das três, é a árvore AVL. Isto provavelmente ocorreu por causa de sua inserção ser a mais devagar entre as três árvores. Também se observa que a árvore binária e a árvore redblack competem para o primeiro lugar das três árvores, sendo que a binária ganhou nas estruturas de 500 e 500000 e a redblack ganhou nas estruturas de 5000 e 50000.
+</p>
+
 # Compilação e Execução
 
 O código disponibilizado possui um arquivo Makefile que realiza todo o procedimento de compilação e execução. Para tanto, temos as seguintes diretrizes de execução:
