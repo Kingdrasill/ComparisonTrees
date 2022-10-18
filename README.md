@@ -143,11 +143,11 @@ Para se ter um bom tempo médio, que estão em milisegundos, das estruturas foi 
 # Conclusão
 
 <p align="justify">
-Do jeito que foi os testes foram feitos no programa podemos tirar como conclusões que a estrutura que sempre tem o melhor tempo total de execução é o Unordered Map do C++, que se o objetivo é apenas guardar dados é melhor estrutura é o vetor pois na inserção ele apenas tem que criar um novo link no final dele e que para estruturas Map e Unordered Map não se tem uma diferença muita grande na busca e remoção dos dados com o aumento da quantidade de dados armazenados neles.
+Foi possível observar com os 100 testes que a estrutura mais rápida neste programa foi a unordered map, também chamada de hash, por causa de sua caraterística de chave única que ajuda bastante a diminuir o tempo para localização de algum item.
 </p>
 
 <p align="justify">
-Tem como melhor o tempo de remoção do vetor pois do jeito que foi feito na busca é feito uma busca binária para achar o dado e na remoção é se andado do ínicio ao fim para achar o dado, por fim de deizar os métodos de busca e remoção o mais igual possível para todas estruturas. A duas maneiras de melhor o programa que são na remoção também achar a posição do número por busca binária ou melhor ainda em vez de na busca retornar os números que devem ser removidos retornar a posição deles no vetor, assim não se tendo o problema que teve no teste de 50000 e 500000 onde o tempo da remoção do vetor é muito maior do que os das outras estruras. 
+Também é possível se observar que o vetor é a estrutura mais lenta por causa do jeito que ela foi implementada para se ter uma comparação igual das estruturas, se não fosse preciso deixar os métodos de inserção, busca e remoção o mais parecido possível para comparar as estruturas o vetor não teria os tempos tão maiores que os das outras estruturas.
 </p>
 
 # Compilação e Execução
